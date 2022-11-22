@@ -95,3 +95,9 @@ def N_queen(n):
 N_queen(N)
 for i in board:
     print (i)
+
+
+
+
+
+
