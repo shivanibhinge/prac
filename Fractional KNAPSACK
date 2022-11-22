@@ -1,0 +1,31 @@
+class Item:
+  def __init__(self, value, weight):
+    self.value = value
+    self.weight = weight
+
+def fractionalKnapsack(w, arr):
+
+  arr.sort(key = lambda x: (x.value/x.weight), reverse = True)
+
+  for item in arr:
+    print(item.value, item.weight, item.value/item.weight)
+  
+  finalValue = 0.0
+
+  for item in arr:
+    if item.weight <= w:
+      w -= item.weight
+      finalValue += item.value
+    else: 
+      finalValue += item.value*w / item.weight
+      break
+  return finalValue
+
+if __name__ == "__main__":
+  w = int(input("Enter Weight: "))
+  n = int(input("Enter length of array: "))
+  for i in range(n):
+    arr.append(x)
+  arr = [Item(60, 10), Item(100, 20), Item(120, 30)]
+  max_val = fractionalKnapsack(w, arr)
+  print(max_val)
